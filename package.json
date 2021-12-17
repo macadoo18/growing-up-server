@@ -15,7 +15,7 @@
     },
     "keywords": [],
     "engines": {
-        "node": "14.15.5"
+        "node": "14.18.2"
     },
     "author": "",
     "license": "ISC",
@@ -33,7 +33,7 @@
         "moment": "^2.29.1",
         "morgan": "^1.10.0",
         "multer": "^1.4.4",
-        "node": "^12.18.3",
+        "node": "^14.18.2",
         "nodemon": "^2.0.15",
         "pg": "^8.7.1",
         "postgrator-cli": "^3.3.0",
