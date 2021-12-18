@@ -18,7 +18,7 @@ const morganOptions = NODE_ENV === 'production' ? 'tiny' : 'common';
 
 app.use(morgan(morganOptions));
 app.use('/uploads', express.static('uploads'));
-app.use(cors({ origin: 'https://growing-up-lr4w4a95k-halemd30.vercel.app' }));
+app.use(cors({ origin: 'https://growing-up-zeta.vercel.app' }));
 app.use(helmet());
 
 app.use('/api/auth', authRouter);
