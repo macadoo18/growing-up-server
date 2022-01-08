@@ -15,10 +15,14 @@ app.use(express.json({ limit: '50mb', extended: true }));
 app.use(fileUpload());
 
 const morganOptions = NODE_ENV === 'production' ? 'tiny' : 'common';
+const origin =
+    NODE_ENV === 'production'
+        ? 'https://growing-up-zeta.vercel.app'
+        : 'http://localhost:7000';
 
 app.use(morgan(morganOptions));
 app.use('/uploads', express.static('uploads'));
-app.use(cors({ origin: 'https://growing-up-zeta.vercel.app' }));
+app.use(cors({ origin }));
 app.use(helmet());
 
 app.use('/api/auth', authRouter);
