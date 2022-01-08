@@ -23,7 +23,7 @@ const origin =
 
 app.use(morgan(morganOptions));
 app.use('/uploads', express.static('uploads'));
-app.use(cors({ origin }));
+app.use(cors());
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
