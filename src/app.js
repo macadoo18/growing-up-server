@@ -22,8 +22,8 @@ const origin =
         : 'http://localhost:7000';
 
 app.use(morgan(morganOptions));
-app.use('/uploads', express.static('uploads'));
 app.use(cors({ origin }));
+app.use('/uploads', express.static('uploads'));
 app.use(helmet());
 
 // app.use((req, res, next) => {
