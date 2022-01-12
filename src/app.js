@@ -25,7 +25,6 @@ const origin =
 app.use(morgan(morganOptions));
 app.use('/uploads', express.static('uploads'));
 //app.use(cors({ origin }));
-app.use(helmet());
 
 app.use((req, res, next) => {
     res.setHeader(
@@ -42,6 +41,8 @@ app.use((req, res, next) => {
     );
     next();
 });
+
+app.use(helmet());
 
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
