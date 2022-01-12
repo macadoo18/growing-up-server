@@ -12,7 +12,8 @@ const sleepingRouter = require('./sleeping/sleeping-router');
 const fileUpload = require('express-fileupload');
 
 const app = express();
-app.use(express.json({ limit: '50mb', extended: true }));
+//app.use(express.json({ limit: '50mb', extended: true }));
+app.use(express.json());
 app.use(fileUpload());
 
 const morganOptions = NODE_ENV === 'production' ? 'tiny' : 'common';
@@ -22,8 +23,8 @@ const origin =
         : 'http://localhost:7000';
 
 app.use(morgan(morganOptions));
+// app.use('/uploads', express.static('uploads'));
 app.use(cors({ origin }));
-app.use('/uploads', express.static('uploads'));
 app.use(helmet());
 
 // app.use((req, res, next) => {
