@@ -20,7 +20,7 @@ const morganOptions = NODE_ENV === 'production' ? 'tiny' : 'common';
 const origin =
     NODE_ENV === 'production'
         ? 'https://growing-up-zeta.vercel.app'
-        : 'http://localhost:7000';
+        : 'http://localhost:3000';
 
 app.use(morgan(morganOptions));
 app.use('/uploads', express.static('uploads'));
